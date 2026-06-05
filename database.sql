@@ -1,0 +1,38 @@
+CREATE TABLE students (
+  id SERIAL PRIMARY KEY,
+  cedula VARCHAR(20) UNIQUE,
+  nombres VARCHAR(100),
+  apellidos VARCHAR(100),
+  correo VARCHAR(100) UNIQUE,
+  telefono VARCHAR(20),
+  carrera VARCHAR(100),
+  semestre INTEGER,
+  periodo VARCHAR(50),
+  fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE teachers (
+  id SERIAL PRIMARY KEY,
+  cedula VARCHAR(20) UNIQUE,
+  nombres VARCHAR(100),
+  apellidos VARCHAR(100),
+  correo VARCHAR(100) UNIQUE,
+  telefono VARCHAR(20),
+  especialidad VARCHAR(100),
+  fecha_ingreso TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE careers (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(100) UNIQUE NOT NULL
+);
+
+CREATE TABLE semesters (
+  id SERIAL PRIMARY KEY,
+  value INTEGER UNIQUE NOT NULL
+);
+
+CREATE TABLE periods (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(100) UNIQUE NOT NULL
+);
